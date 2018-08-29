@@ -12,5 +12,7 @@ afterEvaluate {
 
     compile('com.github.kkojaeh.pico-erp-shared:shared-impl:1.0.0')
 
+    testRuntimeOnly project(':comment-test-cfg')
+
   }
 }
