@@ -1,0 +1,4 @@
+rootProject.name = 'pico-erp-comment'
+include 'comment-api'
+include 'comment-impl'
+
