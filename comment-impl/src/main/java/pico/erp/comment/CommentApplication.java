@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
-import pico.erp.audit.data.AuditConfiguration;
 import pico.erp.shared.ApplicationStarter;
 import pico.erp.shared.Public;
 import pico.erp.shared.SpringBootConfigs;
@@ -51,14 +50,6 @@ public class CommentApplication implements ApplicationStarter {
   @Override
   public pico.erp.shared.Application start(String... args) {
     return new ApplicationImpl(application().run(args));
-  }
-
-  @Bean
-  @Public
-  public AuditConfiguration auditConfiguration() {
-    return AuditConfiguration.builder()
-      .entity(ROLE.class)
-      .build();
   }
 
 }
