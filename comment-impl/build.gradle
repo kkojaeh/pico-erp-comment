@@ -5,14 +5,12 @@ apply plugin: "io.github.divinespear.jpa-schema-generate"
 
 apply from: 'https://rawgit.com/kkojaeh/pico-erp-gradle/master/impl.gradle'
 
-afterEvaluate {
-  dependencies {
+dependencies {
 
-    compile project(':comment-api')
+  compile project(':comment-api')
 
-    compile("com.github.kkojaeh.pico-erp-shared:shared-impl:${sharedVersion}")
+  compile("com.github.kkojaeh.pico-erp-shared:shared-impl:${sharedVersion}")
 
-    testRuntimeOnly project(':comment-test-cfg')
+  testRuntimeOnly project(':comment-test-cfg')
 
-  }
 }
