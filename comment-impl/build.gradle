@@ -12,6 +12,4 @@ dependencies {
 
   compile("com.github.kkojaeh.pico-erp-shared:shared-impl:${sharedVersion}")
 
-  testRuntimeOnly project(':comment-test-cfg')
-
 }
