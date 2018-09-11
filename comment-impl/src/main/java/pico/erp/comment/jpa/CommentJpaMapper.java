@@ -1,4 +1,4 @@
-package pico.erp.comment.impl;
+package pico.erp.comment.jpa;
 
 import java.util.Optional;
 import org.mapstruct.Mapper;
@@ -6,11 +6,10 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.springframework.beans.factory.annotation.Autowired;
 import pico.erp.comment.CommentExceptions.SubjectTypeNotFoundException;
-import pico.erp.comment.core.CommentSubjectTypeRepository;
-import pico.erp.comment.data.CommentSubjectType;
-import pico.erp.comment.data.CommentSubjectTypeId;
-import pico.erp.comment.domain.Comment;
-import pico.erp.comment.impl.jpa.CommentEntity;
+import pico.erp.comment.subject.type.CommentSubjectTypeRepository;
+import pico.erp.comment.subject.type.data.CommentSubjectType;
+import pico.erp.comment.subject.type.data.CommentSubjectTypeId;
+import pico.erp.comment.Comment;
 
 @Mapper
 public abstract class CommentJpaMapper {

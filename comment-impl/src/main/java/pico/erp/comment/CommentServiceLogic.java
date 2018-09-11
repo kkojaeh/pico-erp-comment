@@ -1,4 +1,4 @@
-package pico.erp.comment.core;
+package pico.erp.comment;
 
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import pico.erp.comment.CommentExceptions.NotFoundException;
 import pico.erp.comment.CommentRequests.AddRequest;
 import pico.erp.comment.CommentRequests.RemoveRequest;
-import pico.erp.comment.CommentService;
 import pico.erp.comment.data.CommentData;
-import pico.erp.comment.domain.Comment;
 import pico.erp.shared.Public;
 import pico.erp.shared.event.EventPublisher;
 

@@ -1,15 +1,13 @@
-package pico.erp.comment.core;
+package pico.erp.comment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import pico.erp.comment.CommentEvents;
 import pico.erp.comment.CommentEvents.MentionedEvent;
 import pico.erp.comment.CommentExceptions.NotFoundException;
 import pico.erp.comment.data.CommentData;
-import pico.erp.comment.domain.Comment;
 import pico.erp.shared.event.EventPublisher;
 
 @SuppressWarnings("unused")

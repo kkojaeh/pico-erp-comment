@@ -1,14 +1,13 @@
-package pico.erp.comment.impl;
+package pico.erp.comment.jpa;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import pico.erp.comment.core.CommentRepository;
+import pico.erp.comment.CommentRepository;
 import pico.erp.comment.data.CommentId;
-import pico.erp.comment.domain.Comment;
-import pico.erp.comment.impl.jpa.CommentEntity;
+import pico.erp.comment.Comment;
 
 @Repository
 interface CommentEntityRepository extends CrudRepository<CommentEntity, CommentId> {

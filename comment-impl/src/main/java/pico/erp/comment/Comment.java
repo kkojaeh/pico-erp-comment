@@ -1,4 +1,4 @@
-package pico.erp.comment.domain;
+package pico.erp.comment;
 
 import java.io.Serializable;
 import java.net.URI;
@@ -16,11 +16,11 @@ import pico.erp.comment.CommentEvents.AddedEvent;
 import pico.erp.comment.CommentEvents.RemovedEvent;
 import pico.erp.comment.data.CommentId;
 import pico.erp.comment.data.CommentInfo;
-import pico.erp.comment.data.CommentSubjectId;
-import pico.erp.comment.data.CommentSubjectType;
-import pico.erp.comment.data.CommentSubjectTypeId;
-import pico.erp.comment.domain.CommentMessages.AddResponse;
-import pico.erp.comment.domain.CommentMessages.RemoveResponse;
+import pico.erp.comment.subject.data.CommentSubjectId;
+import pico.erp.comment.subject.type.data.CommentSubjectType;
+import pico.erp.comment.subject.type.data.CommentSubjectTypeId;
+import pico.erp.comment.CommentMessages.AddResponse;
+import pico.erp.comment.CommentMessages.RemoveResponse;
 import pico.erp.shared.data.Auditor;
 
 @ToString

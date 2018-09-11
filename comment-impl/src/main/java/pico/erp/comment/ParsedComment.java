@@ -1,4 +1,4 @@
-package pico.erp.comment.core;
+package pico.erp.comment;
 
 import java.util.Set;
 import lombok.Builder;

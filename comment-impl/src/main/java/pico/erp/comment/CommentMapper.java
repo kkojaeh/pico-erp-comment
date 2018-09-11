@@ -1,4 +1,4 @@
-package pico.erp.comment.core;
+package pico.erp.comment;
 
 import java.util.Optional;
 import org.mapstruct.Mapper;
@@ -7,13 +7,12 @@ import org.mapstruct.Mappings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.AuditorAware;
 import pico.erp.comment.CommentExceptions.SubjectTypeNotFoundException;
-import pico.erp.comment.CommentRequests;
 import pico.erp.comment.data.CommentData;
-import pico.erp.comment.data.CommentSubjectType;
-import pico.erp.comment.data.CommentSubjectTypeId;
-import pico.erp.comment.domain.Comment;
-import pico.erp.comment.domain.CommentMessages.AddRequest;
-import pico.erp.comment.domain.CommentMessages.RemoveRequest;
+import pico.erp.comment.subject.type.data.CommentSubjectType;
+import pico.erp.comment.subject.type.data.CommentSubjectTypeId;
+import pico.erp.comment.CommentMessages.AddRequest;
+import pico.erp.comment.CommentMessages.RemoveRequest;
+import pico.erp.comment.subject.type.CommentSubjectTypeRepository;
 import pico.erp.shared.data.Auditor;
 
 @Mapper

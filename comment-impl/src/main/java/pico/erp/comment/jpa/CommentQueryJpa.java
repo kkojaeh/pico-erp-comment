@@ -1,4 +1,4 @@
-package pico.erp.comment.impl;
+package pico.erp.comment.jpa;
 
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQuery;
@@ -12,9 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import pico.erp.comment.CommentQuery;
-import pico.erp.comment.data.CommentSubjectId;
+import pico.erp.comment.subject.data.CommentSubjectId;
 import pico.erp.comment.data.CommentView;
-import pico.erp.comment.impl.jpa.QCommentEntity;
 import pico.erp.shared.Public;
 import pico.erp.shared.jpa.QueryDslJpaSupport;
 
