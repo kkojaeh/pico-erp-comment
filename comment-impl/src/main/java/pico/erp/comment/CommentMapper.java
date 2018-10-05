@@ -7,11 +7,10 @@ import org.mapstruct.Mappings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.AuditorAware;
 import pico.erp.comment.CommentExceptions.SubjectTypeNotFoundException;
-import pico.erp.comment.data.CommentData;
-import pico.erp.comment.subject.type.data.CommentSubjectType;
-import pico.erp.comment.subject.type.data.CommentSubjectTypeId;
 import pico.erp.comment.CommentMessages.AddRequest;
 import pico.erp.comment.CommentMessages.RemoveRequest;
+import pico.erp.comment.subject.type.CommentSubjectType;
+import pico.erp.comment.subject.type.CommentSubjectTypeId;
 import pico.erp.comment.subject.type.CommentSubjectTypeRepository;
 import pico.erp.shared.data.Auditor;
 
@@ -40,5 +39,22 @@ public abstract class CommentMapper {
   abstract AddRequest map(CommentRequests.AddRequest request);
 
   abstract RemoveRequest map(CommentRequests.RemoveRequest request);
+
+  protected Comment domain(CommentEntity entity) {
+    return Comment.builder()
+      .id(entity.getId())
+      .subjectId(entity.getSubjectId())
+      .subjectType(map(entity.getSubjectTypeId()))
+      .comment(entity.getComment())
+      .createdBy(entity.getCreatedBy())
+      .createdDate(entity.getCreatedDate())
+      .build();
+  }
+
+  @Mappings({
+    @Mapping(target = "subjectTypeId", source = "subjectType.id")
+  })
+  abstract CommentEntity entity(Comment comment);
+
 
 }

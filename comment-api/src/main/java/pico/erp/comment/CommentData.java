@@ -1,10 +1,10 @@
-package pico.erp.comment.data;
+package pico.erp.comment;
 
 import java.time.OffsetDateTime;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
-import pico.erp.comment.subject.data.CommentSubjectId;
+import pico.erp.comment.subject.CommentSubjectId;
 import pico.erp.shared.data.Auditor;
 
 @Data

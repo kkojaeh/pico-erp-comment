@@ -6,8 +6,6 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
-import pico.erp.comment.subject.type.data.CommentSubjectType;
-import pico.erp.comment.subject.type.data.CommentSubjectTypeId;
 
 @Repository
 public class CommentSubjectTypeRepositoryImpl implements CommentSubjectTypeRepository {

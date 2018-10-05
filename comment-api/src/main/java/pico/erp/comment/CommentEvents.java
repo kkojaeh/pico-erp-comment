@@ -3,7 +3,6 @@ package pico.erp.comment;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pico.erp.comment.data.CommentId;
 import pico.erp.shared.event.Event;
 
 public interface CommentEvents {

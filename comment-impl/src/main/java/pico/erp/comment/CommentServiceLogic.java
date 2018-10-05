@@ -8,7 +8,6 @@ import org.springframework.validation.annotation.Validated;
 import pico.erp.comment.CommentExceptions.NotFoundException;
 import pico.erp.comment.CommentRequests.AddRequest;
 import pico.erp.comment.CommentRequests.RemoveRequest;
-import pico.erp.comment.data.CommentData;
 import pico.erp.shared.Public;
 import pico.erp.shared.event.EventPublisher;
 

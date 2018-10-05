@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import pico.erp.comment.CommentEvents.MentionedEvent;
 import pico.erp.comment.CommentExceptions.NotFoundException;
-import pico.erp.comment.data.CommentData;
 import pico.erp.shared.event.EventPublisher;
 
 @SuppressWarnings("unused")

@@ -7,9 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pico.erp.comment.data.CommentId;
-import pico.erp.comment.subject.data.CommentSubjectId;
-import pico.erp.comment.subject.type.data.CommentSubjectTypeId;
+import pico.erp.comment.subject.CommentSubjectId;
+import pico.erp.comment.subject.type.CommentSubjectTypeId;
 import pico.erp.shared.TypeDefinitions;
 
 public interface CommentRequests {

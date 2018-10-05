@@ -1,4 +1,4 @@
-package pico.erp.comment.subject.data;
+package pico.erp.comment.subject;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.io.Serializable;

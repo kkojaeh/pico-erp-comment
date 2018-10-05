@@ -1,4 +1,4 @@
-package pico.erp.comment.jpa;
+package pico.erp.comment;
 
 
 import java.io.Serializable;
@@ -23,9 +23,8 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import pico.erp.comment.data.CommentId;
-import pico.erp.comment.subject.data.CommentSubjectId;
-import pico.erp.comment.subject.type.data.CommentSubjectTypeId;
+import pico.erp.comment.subject.CommentSubjectId;
+import pico.erp.comment.subject.type.CommentSubjectTypeId;
 import pico.erp.shared.TypeDefinitions;
 import pico.erp.shared.data.Auditor;
 

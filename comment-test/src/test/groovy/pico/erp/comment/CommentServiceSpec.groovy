@@ -7,10 +7,9 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.test.annotation.Rollback
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.transaction.annotation.Transactional
-import pico.erp.comment.data.CommentInfo
-import pico.erp.comment.subject.data.CommentSubjectId
-import pico.erp.comment.subject.type.data.CommentSubjectType
-import pico.erp.comment.subject.type.data.CommentSubjectTypeId
+import pico.erp.comment.subject.CommentSubjectId
+import pico.erp.comment.subject.type.CommentSubjectType
+import pico.erp.comment.subject.type.CommentSubjectTypeId
 import pico.erp.shared.IntegrationConfiguration
 import spock.lang.Specification
 

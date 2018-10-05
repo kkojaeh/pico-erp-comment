@@ -1,13 +1,11 @@
-package pico.erp.comment.jpa;
+package pico.erp.comment;
 
 import java.util.Optional;
+import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import pico.erp.comment.CommentRepository;
-import pico.erp.comment.data.CommentId;
-import pico.erp.comment.Comment;
 
 @Repository
 interface CommentEntityRepository extends CrudRepository<CommentEntity, CommentId> {
@@ -22,13 +20,13 @@ public class CommentRepositoryJpa implements CommentRepository {
   private CommentEntityRepository repository;
 
   @Autowired
-  private CommentJpaMapper mapper;
+  private CommentMapper mapper;
 
   @Override
   public Comment create(Comment comment) {
-    CommentEntity entity = mapper.map(comment);
-    entity = repository.save(entity);
-    return mapper.map(entity);
+    val entity = mapper.entity(comment);
+    val created = repository.save(entity);
+    return mapper.domain(created);
   }
 
   @Override
@@ -44,7 +42,7 @@ public class CommentRepositoryJpa implements CommentRepository {
   @Override
   public Optional<Comment> findBy(CommentId id) {
     return Optional.ofNullable(repository.findOne(id))
-      .map(mapper::map);
+      .map(mapper::domain);
   }
 
 }

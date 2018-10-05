@@ -1,7 +1,6 @@
 package pico.erp.comment;
 
 import java.util.Optional;
-import pico.erp.comment.data.CommentId;
 
 public interface CommentRepository {
 

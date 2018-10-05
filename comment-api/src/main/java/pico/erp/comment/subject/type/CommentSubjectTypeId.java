@@ -1,8 +1,7 @@
-package pico.erp.comment.data;
+package pico.erp.comment.subject.type;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.io.Serializable;
-import java.util.UUID;
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -21,7 +20,7 @@ import pico.erp.shared.TypeDefinitions;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode(of = "value")
 @ToString
-public class CommentId implements Serializable {
+public class CommentSubjectTypeId implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
@@ -30,12 +29,8 @@ public class CommentId implements Serializable {
   @NotNull
   private String value;
 
-  public static CommentId from(@NonNull String value) {
-    return new CommentId(value);
-  }
-
-  public static CommentId generate() {
-    return from(UUID.randomUUID().toString());
+  public static CommentSubjectTypeId from(@NonNull String value) {
+    return new CommentSubjectTypeId(value);
   }
 
 }

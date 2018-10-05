@@ -1,9 +1,9 @@
-package pico.erp.comment.subject.type.data;
+package pico.erp.comment.subject.type;
 
 import java.net.URI;
 import java.util.function.Function;
 import lombok.Getter;
-import pico.erp.comment.data.CommentInfo;
+import pico.erp.comment.CommentInfo;
 
 public interface CommentSubjectType {
 

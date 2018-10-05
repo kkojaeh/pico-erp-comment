@@ -14,13 +14,11 @@ import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import pico.erp.comment.CommentEvents.AddedEvent;
 import pico.erp.comment.CommentEvents.RemovedEvent;
-import pico.erp.comment.data.CommentId;
-import pico.erp.comment.data.CommentInfo;
-import pico.erp.comment.subject.data.CommentSubjectId;
-import pico.erp.comment.subject.type.data.CommentSubjectType;
-import pico.erp.comment.subject.type.data.CommentSubjectTypeId;
 import pico.erp.comment.CommentMessages.AddResponse;
 import pico.erp.comment.CommentMessages.RemoveResponse;
+import pico.erp.comment.subject.CommentSubjectId;
+import pico.erp.comment.subject.type.CommentSubjectType;
+import pico.erp.comment.subject.type.CommentSubjectTypeId;
 import pico.erp.shared.data.Auditor;
 
 @ToString
