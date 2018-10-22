@@ -1,5 +1,6 @@
 package pico.erp.comment.subject.type;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.io.Serializable;
 import javax.persistence.Embeddable;
@@ -29,6 +30,7 @@ public class CommentSubjectTypeId implements Serializable {
   @NotNull
   private String value;
 
+  @JsonCreator
   public static CommentSubjectTypeId from(@NonNull String value) {
     return new CommentSubjectTypeId(value);
   }

@@ -1,5 +1,6 @@
 package pico.erp.comment.subject;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.io.Serializable;
 import java.util.UUID;
@@ -30,6 +31,7 @@ public class CommentSubjectId implements Serializable {
   @NotNull
   private String value;
 
+  @JsonCreator
   public static CommentSubjectId from(@NonNull String value) {
     return new CommentSubjectId(value);
   }
