@@ -40,7 +40,7 @@ public abstract class CommentMapper {
 
   abstract RemoveRequest map(CommentRequests.RemoveRequest request);
 
-  protected Comment domain(CommentEntity entity) {
+  protected Comment jpa(CommentEntity entity) {
     return Comment.builder()
       .id(entity.getId())
       .subjectId(entity.getSubjectId())
@@ -54,7 +54,7 @@ public abstract class CommentMapper {
   @Mappings({
     @Mapping(target = "subjectTypeId", source = "subjectType.id")
   })
-  abstract CommentEntity entity(Comment comment);
+  abstract CommentEntity jpa(Comment comment);
 
 
 }

@@ -24,9 +24,9 @@ public class CommentRepositoryJpa implements CommentRepository {
 
   @Override
   public Comment create(Comment comment) {
-    val entity = mapper.entity(comment);
+    val entity = mapper.jpa(comment);
     val created = repository.save(entity);
-    return mapper.domain(created);
+    return mapper.jpa(created);
   }
 
   @Override
@@ -42,7 +42,7 @@ public class CommentRepositoryJpa implements CommentRepository {
   @Override
   public Optional<Comment> findBy(CommentId id) {
     return Optional.ofNullable(repository.findOne(id))
-      .map(mapper::domain);
+      .map(mapper::jpa);
   }
 
 }
