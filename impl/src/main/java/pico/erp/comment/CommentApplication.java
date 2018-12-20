@@ -1,10 +1,14 @@
 package pico.erp.comment;
 
+import java.util.Collections;
 import java.util.Properties;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
+import pico.erp.comment.CommentApi.Roles;
+import pico.erp.shared.ApplicationId;
 import pico.erp.shared.ApplicationStarter;
 import pico.erp.shared.Public;
 import pico.erp.shared.SpringBootConfigs;
@@ -39,7 +43,17 @@ public class CommentApplication implements ApplicationStarter {
   @Bean
   @Public
   public Role commentManagerRole() {
-    return ROLE.COMMENT_MANAGER;
+    return Roles.COMMENT_MANAGER;
+  }
+
+  @Override
+  public Set<ApplicationId> getDependencies() {
+    return Collections.emptySet();
+  }
+
+  @Override
+  public ApplicationId getId() {
+    return CommentApi.ID;
   }
 
   @Override
