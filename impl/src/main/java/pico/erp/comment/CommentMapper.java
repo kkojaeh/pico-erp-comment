@@ -34,7 +34,7 @@ public abstract class CommentMapper {
 
   @Mappings({
     @Mapping(target = "subjectType", source = "subjectTypeId"),
-    @Mapping(target = "createdBy", expression = "java(auditorAware.getCurrentAuditor())")
+    @Mapping(target = "createdBy", expression = "java(auditorAware.getCurrentAuditor().get())")
   })
   abstract AddRequest map(CommentRequests.AddRequest request);
 

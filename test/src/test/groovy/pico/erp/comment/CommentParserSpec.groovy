@@ -1,45 +1,25 @@
 package pico.erp.comment
 
-import org.springframework.beans.factory.annotation.Autowired
+
+import kkojaeh.spring.boot.component.SpringBootTestComponent
+import kkojaeh.spring.boot.component.Take
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
-import org.springframework.context.annotation.Configuration
-import org.springframework.context.annotation.Lazy
 import org.springframework.test.annotation.Rollback
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.transaction.annotation.Transactional
-import pico.erp.comment.subject.type.CommentSubjectType
-import pico.erp.comment.subject.type.CommentSubjectTypeId
-import pico.erp.shared.IntegrationConfiguration
+import pico.erp.shared.TestParentApplication
 import spock.lang.Specification
 
-@SpringBootTest(classes = [IntegrationConfiguration])
+@SpringBootTest(classes = [CommentApplication, CommentConfig])
+@SpringBootTestComponent(parent = TestParentApplication, siblings = [])
 @Transactional
 @Rollback
 @ActiveProfiles("test")
-@Configuration
-@ComponentScan("pico.erp.comment")
+@ComponentScan(useDefaultFilters = false)
 class CommentParserSpec extends Specification {
 
-  @Bean
-  CommentSubjectType testCommentSubjectType() {
-    return new CommentSubjectType() {
-
-      @Override
-      CommentSubjectTypeId getId() {
-        return CommentSubjectTypeId.from("test")
-      }
-
-      @Override
-      URI toUri(CommentInfo info) {
-        return URI.create("http://test/${info.subjectId}")
-      }
-    }
-  }
-
-  @Lazy
-  @Autowired
+  @Take
   CommentParser commentParser
 
   def text = """해당 테스트는 아래의 분들과 함께 해야 할것으로 보입니다
