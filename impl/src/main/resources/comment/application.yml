@@ -9,6 +9,7 @@ spring:
     basename: comment-messages
     encoding: UTF-8
   datasource:
+    name: comment-datasource
     url: ${COMMENT_DATASOURCE_URL:${DATASOURCE_URL:jdbc:p6spy:hsqldb:mem:comment}}
     driver-class-name: ${COMMENT_DATASOURCE_DRIVER_CLASS_NAME:${DATASOURCE_DRIVER_CLASS_NAME:com.p6spy.engine.spy.P6SpyDriver}}
     username: ${COMMENT_DATASOURCE_USERNAME:${DATASOURCE_USERNAME:as}}
