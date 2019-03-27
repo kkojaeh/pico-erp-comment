@@ -1,4 +1,6 @@
 spring:
+  jmx:
+    default-domain: comment
   banner:
     location: classpath:comment/banner.txt
   application:
