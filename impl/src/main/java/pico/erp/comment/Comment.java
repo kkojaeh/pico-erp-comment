@@ -2,7 +2,7 @@ package pico.erp.comment;
 
 import java.io.Serializable;
 import java.net.URI;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 import lombok.AccessLevel;
@@ -43,7 +43,7 @@ public class Comment implements Serializable, CommentInfo {
 
   Auditor createdBy;
 
-  OffsetDateTime createdDate;
+  LocalDateTime createdDate;
 
   public Comment() {
   }
@@ -54,7 +54,7 @@ public class Comment implements Serializable, CommentInfo {
     subjectId = request.getSubjectId();
     comment = request.getComment();
     createdBy = request.getCreatedBy();
-    createdDate = OffsetDateTime.now();
+    createdDate = LocalDateTime.now();
     return new AddResponse(Arrays.asList(new AddedEvent(this.id)));
   }
 
