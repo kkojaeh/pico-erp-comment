@@ -16,6 +16,11 @@
 build/generated-schema/create.sql
 ```
 
+# dependency report
+```
+./gradlew htmlDependencyReport
+```
+
 # IntelliJ Setting
 
 * Settings

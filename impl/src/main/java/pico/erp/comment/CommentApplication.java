@@ -1,69 +1,45 @@
 package pico.erp.comment;
 
-import java.util.Collections;
-import java.util.Properties;
-import java.util.Set;
+import kkojaeh.spring.boot.component.Give;
+import kkojaeh.spring.boot.component.SpringBootComponent;
+import kkojaeh.spring.boot.component.SpringBootComponentBuilder;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import pico.erp.comment.CommentApi.Roles;
-import pico.erp.shared.ApplicationId;
-import pico.erp.shared.ApplicationStarter;
-import pico.erp.shared.Public;
-import pico.erp.shared.SpringBootConfigs;
+import pico.erp.shared.SharedConfiguration;
 import pico.erp.shared.data.Role;
-import pico.erp.shared.impl.ApplicationImpl;
 
 @Slf4j
-@SpringBootConfigs
-public class CommentApplication implements ApplicationStarter {
+@SpringBootComponent("comment")
+@EntityScan
+@EnableAspectJAutoProxy
+@EnableTransactionManagement
+@EnableJpaRepositories
+@EnableJpaAuditing(auditorAwareRef = "auditorAware", dateTimeProviderRef = "dateTimeProvider")
+@SpringBootApplication
+@Import(value = {
+  SharedConfiguration.class
+})
+public class CommentApplication {
 
-  public static final String CONFIG_NAME = "comment/application";
-
-  public static final String CONFIG_NAME_PROPERTY = "spring.config.name=comment/application";
-
-  public static final Properties DEFAULT_PROPERTIES = new Properties();
-
-  static {
-    DEFAULT_PROPERTIES.put("spring.config.name", CONFIG_NAME);
-  }
-
-  public static SpringApplication application() {
-    return new SpringApplicationBuilder(CommentApplication.class)
-      .properties(DEFAULT_PROPERTIES)
-      .web(false)
-      .build();
-  }
-
-  public static void main(String[] args) {
-    application().run(args);
+  public static void main(String... args) {
+    new SpringBootComponentBuilder()
+      .component(CommentApplication.class)
+      .run(args);
   }
 
   @Bean
-  @Public
+  @Give
   public Role commentManagerRole() {
     return Roles.COMMENT_MANAGER;
   }
 
-  @Override
-  public Set<ApplicationId> getDependencies() {
-    return Collections.emptySet();
-  }
-
-  @Override
-  public ApplicationId getId() {
-    return CommentApi.ID;
-  }
-
-  @Override
-  public boolean isWeb() {
-    return false;
-  }
-
-  @Override
-  public pico.erp.shared.Application start(String... args) {
-    return new ApplicationImpl(application().run(args));
-  }
 
 }

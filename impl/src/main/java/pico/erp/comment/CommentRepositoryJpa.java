@@ -31,17 +31,17 @@ public class CommentRepositoryJpa implements CommentRepository {
 
   @Override
   public void deleteBy(CommentId id) {
-    repository.delete(id);
+    repository.deleteById(id);
   }
 
   @Override
   public boolean exists(CommentId id) {
-    return repository.exists(id);
+    return repository.existsById(id);
   }
 
   @Override
   public Optional<Comment> findBy(CommentId id) {
-    return Optional.ofNullable(repository.findOne(id))
+    return repository.findById(id)
       .map(mapper::jpa);
   }
 

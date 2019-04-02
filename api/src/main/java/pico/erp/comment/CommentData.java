@@ -1,6 +1,6 @@
 package pico.erp.comment;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -19,6 +19,6 @@ public class CommentData {
 
   Auditor createdBy;
 
-  OffsetDateTime createdDate;
+  LocalDateTime createdDate;
 
 }

@@ -4,13 +4,13 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import kkojaeh.spring.boot.component.Give;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.HtmlUtils;
 import pico.erp.comment.CommentParser;
 import pico.erp.comment.ParsedComment;
-import pico.erp.shared.Public;
 
-@Public
+@Give
 @Component
 public class CommentParserImpl implements CommentParser {
 

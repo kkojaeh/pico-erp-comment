@@ -1,13 +1,14 @@
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: "net.ltgt.apt"
-apply plugin: 'net.ltgt.apt-idea'
+apply plugin:  'java'
+apply plugin:  'groovy'
+apply plugin:  'net.ltgt.apt'
+apply plugin:  "net.ltgt.apt-idea"
+apply plugin:  'org.springframework.boot'
+apply plugin:  'io.spring.dependency-management'
+apply plugin:  'project-report'
 
-apply from: 'https://rawgit.com/kkojaeh/pico-erp-gradle/master/api.gradle'
+apply from: 'https://rawgit.com/kkojaeh/pico-erp-gradle/spring-boot-2/api.gradle'
 
 dependencies {
-
-  compile("org.projectlombok:lombok:${lombokVersion}")
 
   compile("com.github.kkojaeh.pico-erp-shared:api:${sharedVersion}")
 

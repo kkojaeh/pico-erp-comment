@@ -1,5 +1,6 @@
 package pico.erp.comment;
 
+import kkojaeh.spring.boot.component.Give;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,11 +9,10 @@ import org.springframework.validation.annotation.Validated;
 import pico.erp.comment.CommentExceptions.NotFoundException;
 import pico.erp.comment.CommentRequests.AddRequest;
 import pico.erp.comment.CommentRequests.RemoveRequest;
-import pico.erp.shared.Public;
 import pico.erp.shared.event.EventPublisher;
 
+@Give
 @Service
-@Public
 @Transactional
 @Validated
 public class CommentServiceLogic implements CommentService {
