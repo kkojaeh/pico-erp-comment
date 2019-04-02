@@ -1,11 +1,13 @@
-apply plugin: 'java'
-apply plugin: 'groovy'
-apply plugin: "net.ltgt.apt"
-apply plugin: "net.ltgt.apt-idea"
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: 'io.github.divinespear.jpa-schema-generate'
-apply plugin: 'project-report'
+plugins {
+  id 'java'
+  id 'groovy'
+  id "net.ltgt.apt"
+  id "net.ltgt.apt-idea"
+  id 'org.springframework.boot'
+  id 'io.spring.dependency-management'
+  id 'io.github.divinespear.jpa-schema-generate'
+  id 'project-report'
+}
 
 apply from: 'https://rawgit.com/kkojaeh/pico-erp-gradle/spring-boot-2/impl.gradle'
 
@@ -19,7 +21,7 @@ dependencies {
 
   compile("com.github.kkojaeh:spring-boot-component:0.0.11")
 
-  compile("com.github.kkojaeh.pico-erp-shared:impl:${sharedVersion}") {
+  compile("com.github.kkojaeh.pico-erp-shared:impl:${sharedVersion}"){
     exclude module: 'spring-boot-component'
   }
 
