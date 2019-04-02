@@ -9,5 +9,5 @@ install:
 - ./gradlew clean
 
 script:
-- ./gradle build
+- ./gradlew build
 
