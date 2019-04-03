@@ -19,10 +19,6 @@ dependencies {
 
   compile project(':api')
 
-  compile("com.github.kkojaeh:spring-boot-component:0.0.11")
-
-  compile("com.github.kkojaeh.pico-erp-shared:impl:${sharedVersion}"){
-    exclude module: 'spring-boot-component'
-  }
+  compile("com.github.kkojaeh.pico-erp-shared:impl:${sharedVersion}")
 
 }

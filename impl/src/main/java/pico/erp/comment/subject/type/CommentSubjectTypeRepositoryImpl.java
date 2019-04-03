@@ -3,13 +3,13 @@ package pico.erp.comment.subject.type;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
-import kkojaeh.spring.boot.component.Take;
+import kkojaeh.spring.boot.component.ComponentAutowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class CommentSubjectTypeRepositoryImpl implements CommentSubjectTypeRepository {
 
-  @Take(required = false)
+  @ComponentAutowired(required = false)
   List<CommentSubjectType> types;
 
   @Override

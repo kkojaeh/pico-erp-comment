@@ -1,6 +1,6 @@
 package pico.erp.comment;
 
-import kkojaeh.spring.boot.component.Give;
+import kkojaeh.spring.boot.component.ComponentBean;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import pico.erp.comment.CommentRequests.AddRequest;
 import pico.erp.comment.CommentRequests.RemoveRequest;
 import pico.erp.shared.event.EventPublisher;
 
-@Give
+@ComponentBean
 @Service
 @Transactional
 @Validated

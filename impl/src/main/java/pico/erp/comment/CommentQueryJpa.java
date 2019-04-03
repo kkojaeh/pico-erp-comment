@@ -4,7 +4,7 @@ import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQuery;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import kkojaeh.spring.boot.component.Give;
+import kkojaeh.spring.boot.component.ComponentBean;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,7 +15,7 @@ import org.springframework.validation.annotation.Validated;
 import pico.erp.comment.subject.CommentSubjectId;
 import pico.erp.shared.jpa.QueryDslJpaSupport;
 
-@Give
+@ComponentBean
 @Service
 @Transactional(readOnly = true)
 @Validated
