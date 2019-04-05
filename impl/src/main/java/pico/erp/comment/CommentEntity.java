@@ -2,7 +2,7 @@ package pico.erp.comment;
 
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -21,7 +21,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import pico.erp.comment.subject.CommentSubjectId;
 import pico.erp.comment.subject.type.CommentSubjectTypeId;
@@ -71,8 +70,7 @@ public class CommentEntity implements Serializable {
   @CreatedBy
   Auditor createdBy;
 
-  @CreatedDate
   @Column(updatable = false)
-  LocalDateTime createdDate;
+  OffsetDateTime createdDate;
 
 }
