@@ -11,6 +11,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jms.annotation.EnableJms;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import pico.erp.ComponentDefinition;
 import pico.erp.comment.CommentApi.Roles;
@@ -20,6 +21,7 @@ import pico.erp.shared.data.Role;
 @Slf4j
 @SpringBootComponent("comment")
 @EntityScan
+@EnableJms
 @EnableAspectJAutoProxy
 @EnableTransactionManagement
 @EnableJpaRepositories
